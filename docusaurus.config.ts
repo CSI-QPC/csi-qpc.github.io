@@ -23,7 +23,7 @@ const config = {
 
   // These are only needed for GitHub Pages deployment.
   // Keep placeholders for now; we'll set properly when deploying.
-  organizationName: 'qpc-csi', // TODO: change later (your GitHub username/org)
+  organizationName: 'waikyy90', // TODO: change later (your GitHub username/org)
   projectName: 'qpc-site',     // TODO: change later (your repo name)
 
   // During early setup, "warn" is less annoying than "throw".
