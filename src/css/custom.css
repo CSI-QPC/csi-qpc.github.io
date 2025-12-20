@@ -1,0 +1,183 @@
+/* =========================
+   Global theme variables
+   ========================= */
+
+:root {
+  --ifm-font-family-base: system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif;
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+
+  --ifm-font-size-base: 15px;
+  --ifm-line-height-base: 1.6;
+  --ifm-heading-line-height: 1.2;
+
+  /* Wider content like GeDaC */
+  --ifm-container-width: 1260px;
+  --ifm-container-width-xl: 1260px;
+
+  /* Brand colour */
+  --ifm-color-primary: #0b5cab;
+  --ifm-color-primary-dark: #0a539a;
+  --ifm-color-primary-darker: #094c8f;
+  --ifm-color-primary-light: #0d65bf;
+  --ifm-color-primary-lighter: #0e6fce;
+}
+
+/* =========================
+   Sidebar
+   ========================= */
+
+.theme-doc-sidebar-container {
+  width: 260px;
+  background: #fbfbfc;
+  border-right: 1px solid #eef0f3;
+}
+
+/* =========================
+   Navbar (taller + clean alignment)
+   ========================= */
+
+.navbar {
+  min-height: 80px;
+  height: auto;
+  padding: 0;
+  border-bottom: 1px solid #eef0f3;
+}
+
+/* Add consistent left/right padding so it doesn't hug the edge */
+.navbar__inner {
+  min-height: 80px;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* On big screens, match your doc container width more closely */
+@media (min-width: 1200px) {
+  .navbar__inner {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Brand block: logo + title */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-right: 24px;
+}
+
+/* Ensure SVG/logo sits nicely */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo img {
+  height: 46px;
+  width: auto;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/* Site title - remove manual nudges */
+.navbar__title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+/* Push nav links to the right */
+.navbar__items--right {
+  margin-left: auto;
+  align-items: center;
+}
+
+/* Slightly tighter nav links */
+.navbar__link {
+  font-size: 0.95rem;
+}
+
+.navbar__link--active {
+  font-weight: 700;
+}
+
+
+
+/* =========================
+   Doc layout & spacing
+   ========================= */
+
+/* Reduce excessive top whitespace */
+.theme-doc-breadcrumbs {
+  margin-bottom: 1rem;
+}
+
+/* Main doc container vertical rhythm */
+.theme-doc-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Main content breathing room (KEY FIX) */
+.theme-doc-markdown {
+  padding-top: 0.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Wider padding on large screens */
+@media (min-width: 996px) {
+  .theme-doc-markdown {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Protect against tight layout on small screens */
+@media (max-width: 768px) {
+  .theme-doc-markdown {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* =========================
+   Typography tuning
+   ========================= */
+
+/* Reduce big page title like "Welcome" */
+.markdown h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+}
+.markdown h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   Footer (make it smaller)
+   ========================= */
+
+.footer {
+  padding: 0.6rem 0;
+}
+
+.footer__copyright {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Optional: remove extra spacing if any */
+.footer .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
