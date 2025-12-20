@@ -95,6 +95,7 @@ const config = {
           { to: '/faqs', label: 'FAQs', position: 'right' },
 
         ],
+
       },
 
 
