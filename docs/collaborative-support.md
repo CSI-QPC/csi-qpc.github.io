@@ -1,27 +1,27 @@
 ---
-title: What We Offer
+title: Our Approach
 ---
-
-# What We Offer
+# Our Approach Proteomics Collaboration
 <br />
+We believe robust proteomics data is best achieved through thoughtful experimental planning, careful execution, and close collaboration throughout the study.
 
 **How we work with collaborators**
 
-We work closely with research teams to support proteomics studies from planning to interpretation. Our approach emphasizes early alignment on scientific questions, experimental design, and technical feasibility to ensure robust and reproducible outcomes.
+Each project begins with discussion and alignment on the biological question, study objectives, and technical feasibility to ensure robust and interpretable outcomes. Through this approach, we operate as a collaborative research partner rather than a service facility.
 
 **From question to experiment**
 
-We help translate biological questions into appropriate proteomics strategies, advising on study design, controls, sample types, and workflow selection. Where needed, pilot studies and optimization are discussed before large-scale experiments.
+Biological questions are translated into appropriate proteomics strategies through joint planning. We advise on experimental design, controls, sample types, and quantitative approaches, and discuss pilot or optimization steps where needed before larger studies proceed.
 
 **From data to insight**
 
-Beyond data acquisition, we support data processing, quality assessment, and interpretation, working with collaborators to ensure results are biologically meaningful and analytically sound.
+Support extends beyond data acquisition to include data processing, quality assessment, and interpretation. Results are reviewed together with collaborators to ensure analytical soundness and biological relevance.
 
-**What collaborators receive**
+**What collaborators can expect**
 
-- Experimental design and workflow guidance
-- Access to quantitative proteomics and mass spectrometry platforms and workflows
-- Processed, quality-controlled datasets
-- Documentation of methods and analysis parameters
-- Support with data interpretation and discussion
-- Manuscript support regarding quantitative proteomics
+- Guidance on experimental design and workflow selection  
+- Access to quantitative proteomics and mass spectrometry platforms  
+- Processed, quality-controlled datasets  
+- Clear documentation of methods and analysis parameters  
+- Support with data interpretation and discussion  
+- Input on quantitative proteomics aspects of manuscripts

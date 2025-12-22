@@ -27,10 +27,10 @@
    Sidebar
    ========================= */
 
+/* Sidebar uses theme surfaces */
 .theme-doc-sidebar-container {
-  width: 260px;
-  background: #fbfbfc;
-  border-right: 1px solid #eef0f3;
+  background: var(--ifm-background-surface-color);
+  border-right: 1px solid var(--ifm-toc-border-color);
 }
 
 /* =========================
@@ -180,4 +180,45 @@
 .footer .container {
   padding-top: 0;
   padding-bottom: 0;
+}
+
+/* Welcome page: logo + tagline block */
+.qpcHeroMark {
+  display: flex;
+  justify-content: flex-end; /* desktop: push to the right */
+  align-items: center;
+  gap: 12px;
+  margin: 1.2rem 0 1.2rem;
+}
+
+.qpcHeroLogo {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+.qpcHeroTag {
+  line-height: 1.2;
+  font-size: 0.7rem;
+  font-style: italic;
+  opacity: 0.8;
+  text-align: left;
+}
+
+/* Mobile: stack + center */
+@media (max-width: 768px) {
+  .qpcHeroMark {
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    margin: 1.2rem 0 1.2rem;
+  }
+
+  .qpcHeroLogo {
+    width: 140px;
+  }
+
+  .qpcHeroTag {
+    text-align: center;
+  }
 }
