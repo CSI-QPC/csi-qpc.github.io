@@ -15,7 +15,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'collaborative-support',
-        'workflows',
+        'workflow',
         'expertise',
         'instrumentation',
         'data-analysis',
