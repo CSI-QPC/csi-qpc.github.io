@@ -354,7 +354,7 @@ html[data-theme="dark"] .qpcHeroLogo {
    Hide hero logo on mobile
    ========================= */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .qpcHeroLogo {
     display: none;
   }
