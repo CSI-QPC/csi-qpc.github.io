@@ -349,3 +349,13 @@ html[data-theme="dark"] .qpcHeroBlurb {
 html[data-theme="dark"] .qpcHeroLogo {
   filter: drop-shadow(0 6px 18px rgba(0,0,0,0.55));
 }
+
+/* =========================
+   Hide hero logo on mobile
+   ========================= */
+
+@media (max-width: 768px) {
+  .qpcHeroLogo {
+    display: none;
+  }
+}
