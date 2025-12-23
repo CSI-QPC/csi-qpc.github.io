@@ -90,6 +90,7 @@ const config = {
         items: [
           { to: '/', label: 'Welcome', position: 'right' },
           { to: '/collaborative-support', label: 'Collaborative Support', position: 'right' },
+          { to: '/publications', label: 'Publications', position: 'right' },  
           { to: '/team', label: 'Our Team', position: 'right' },
           { to: '/contact', label: 'Contact', position: 'right' },
           { to: '/faqs', label: 'FAQs', position: 'right' },
@@ -103,8 +104,14 @@ const config = {
       footer: {
         style: 'light',
         links: [],
-        copyright: `© ${new Date().getFullYear()} Quantitative Proteomics Core (QPC), CSI Singapore (NUS).`,
+        copyright: `
+          © ${new Date().getFullYear()} 
+          Quantitative Proteomics Core (QPC), 
+          <a href="https://www.csi.nus.edu.sg/" target="_blank" rel="noopener noreferrer">CSI Singapore</a>, 
+          <a href="https://www.nus.edu.sg/" target="_blank" rel="noopener noreferrer">NUS</a>.
+        `,
       },
+
 
       prism: {
         theme: prismThemes.github,

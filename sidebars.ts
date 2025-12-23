@@ -22,6 +22,12 @@ const sidebars: SidebarsConfig = {
       ],
     },
 
+        {
+      type: 'doc',
+      id: 'publications',
+      label: 'Publications',
+    },
+
     {
       type: 'doc',
       id: 'team',

@@ -1,6 +1,6 @@
-/* =========================
+/* =================================================
    Global theme variables
-   ========================= */
+   ================================================= */
 
 :root {
   --ifm-font-family-base: system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
@@ -11,7 +11,7 @@
   --ifm-line-height-base: 1.6;
   --ifm-heading-line-height: 1.2;
 
-  /* Wider content like GeDaC */
+  /* Wider content (GeDaC-like) */
   --ifm-container-width: 1260px;
   --ifm-container-width-xl: 1260px;
 
@@ -23,28 +23,26 @@
   --ifm-color-primary-lighter: #0e6fce;
 }
 
-/* =========================
+/* =================================================
    Sidebar
-   ========================= */
+   ================================================= */
 
-/* Sidebar uses theme surfaces */
 .theme-doc-sidebar-container {
   background: var(--ifm-background-surface-color);
   border-right: 1px solid var(--ifm-toc-border-color);
 }
 
-/* =========================
-   Navbar (taller + clean alignment)
-   ========================= */
+/* =================================================
+   Navbar (stable, aligned, boring-on-purpose)
+   ================================================= */
 
 .navbar {
   min-height: 80px;
   height: auto;
   padding: 0;
-  border-bottom: 1px solid #eef0f3;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
 }
 
-/* Add consistent left/right padding so it doesn't hug the edge */
 .navbar__inner {
   min-height: 80px;
   align-items: center;
@@ -52,7 +50,6 @@
   padding-right: 24px;
 }
 
-/* On big screens, match your doc container width more closely */
 @media (min-width: 1200px) {
   .navbar__inner {
     padding-left: 32px;
@@ -60,45 +57,36 @@
   }
 }
 
-/* Brand block: logo + title */
+/* Logo + title block */
 .navbar__brand {
   display: flex;
   align-items: center;
-  gap: 30px;
-  margin-right: 24px;
-}
-
-/* Ensure SVG/logo sits nicely */
-.navbar__logo {
-  display: flex;
-  align-items: center;
+  gap: 12px;
+  margin-right: 20px;
 }
 
 .navbar__logo img {
   height: 46px;
   width: auto;
   display: block;
-  padding: 0;
-  margin: 0;
 }
 
-/* Site title - remove manual nudges */
+/* Site title (desktop only) */
 .navbar__title {
   font-size: 1.12rem;
   font-weight: 700;
-  margin-left: 3.1rem;
-  padding: 0;
   line-height: 1.15;
+  margin: 0;
+  padding: 0;
   white-space: nowrap;
 }
 
-/* Push nav links to the right */
+/* Push menu to the right */
 .navbar__items--right {
   margin-left: auto;
   align-items: center;
 }
 
-/* Slightly tighter nav links */
 .navbar__link {
   font-size: 0.95rem;
 }
@@ -107,134 +95,23 @@
   font-weight: 700;
 }
 
-/* =========================
-   Doc layout & spacing
-   ========================= */
+/* =================================================
+   Mobile navbar behaviour
+   ================================================= */
 
-/* Reduce excessive top whitespace */
-.theme-doc-breadcrumbs {
-  margin-bottom: 1rem;
-}
-
-/* Main doc container vertical rhythm */
-.theme-doc-container {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-/* Main content breathing room (KEY FIX) */
-.theme-doc-markdown {
-  padding-top: 0.25rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-/* Wider padding on large screens */
-@media (min-width: 996px) {
-  .theme-doc-markdown {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-  .navbar_title {
-      margin-left:3.5rem;
-  }
-}
-
-/* Protect against tight layout on small screens */
-@media (max-width: 768px) {
-  .theme-doc-markdown {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-}
-
-/* =========================
-   Typography tuning
-   ========================= */
-
-/* Reduce big page title like "Welcome" */
-.markdown h1 {
-  font-size: 2rem;
-  line-height: 1.15;
-  margin-bottom: 0.8rem;
-}
-.markdown h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-/* =========================
-   Footer (make it smaller)
-   ========================= */
-
-.footer {
-  padding: 0.6rem 0;
-}
-
-.footer__copyright {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  margin: 0;
-}
-
-/* Optional: remove extra spacing if any */
-.footer .container {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-/* Welcome page: logo + tagline block */
-.qpcHeroMark {
-  display: flex;
-  justify-content: flex-end; /* desktop: push to the right */
-  align-items: center;
-  gap: 12px;
-  margin: 1.2rem 0 1.2rem;
-}
-
-.qpcHeroLogo {
-  width: 160px;
-  height: auto;
-  display: block;
-}
-
-.qpcHeroTag {
-  line-height: 1.2;
-  font-size: 0.7rem;
-  font-style: italic;
-  opacity: 0.8;
-  text-align: left;
-}
-
-/* Mobile: stack + center */
-@media (max-width: 768px) {
-  .qpcHeroMark {
-    justify-content: center;
-    flex-direction: column;
-    gap: 8px;
-    margin: 1.2rem 0 1.2rem;
-  }
-
-  .qpcHeroLogo {
-    width: 140px;
-  }
-
-  .qpcHeroTag {
-    text-align: center;
-  }
-}
-
-/* Mobile: hide the long navbar title to avoid clutter */
 @media (max-width: 996px) {
+  /* Hide long title on mobile */
   .navbar__title {
     display: none !important;
   }
-}
 
-/* Mobile: increase navbar height and icon tap targets */
-@media (max-width: 996px) {
-  .navbar {
+  .navbar,
+  .navbar__inner {
     min-height: 64px;
+  }
+
+  .navbar__logo img {
+    height: 28px;
   }
 
   .navbar__toggle,
@@ -244,16 +121,231 @@
     padding: 10px 12px;
   }
 
-  /* Optional: make the hamburger icon bigger */
   .navbar__toggle svg {
     width: 24px;
     height: 24px;
   }
 }
 
-@media (max-width: 996px) {
-  .navbar__logo img {
-    height: 28px;   /* tweak: 24–32 usually good */
-    width: auto;
+/* =================================================
+   Doc layout & spacing
+   ================================================= */
+
+.theme-doc-breadcrumbs {
+  margin-bottom: 1rem;
+}
+
+.theme-doc-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.theme-doc-markdown {
+  padding-top: 0.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 996px) {
+  .theme-doc-markdown {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
+}
+
+@media (max-width: 768px) {
+  .theme-doc-markdown {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* =================================================
+   Typography tuning
+   ================================================= */
+
+.markdown h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+}
+
+.markdown h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* =================================================
+   Footer (small, calm, non-distracting)
+   ================================================= */
+
+.footer {
+  padding: 0.6rem 0;
+}
+
+.footer__copyright {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.footer .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* =========================
+   Welcome hero (no border)
+   ========================= */
+
+.qpcHero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+
+  padding: 28px 28px;
+  border-radius: 18px;
+
+  background: transparent;
+  overflow: hidden;
+}
+
+/* Background texture (stronger) */
+.qpcHero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/img/hero-texture.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left 23%;
+
+  /* Make the texture actually visible */
+  opacity: 0.72;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+.qpcHero {
+  min-height: 240px;   /* try 240–280 */
+}
+
+/* Fade OUT the texture towards the right (so the logo area stays cleaner)
+   This does NOT “white-wash” the whole hero; it only softens the far-right. */
+.qpcHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.0) 0%,
+    rgba(255, 255, 255, 0.0) 55%,
+    rgba(255, 255, 255, 0.22) 78%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.qpcHeroText,
+.qpcHeroLogo {
+  position: relative;
+  z-index: 2;
+}
+
+.qpcHeroText {
+  max-width: 720px;
+}
+
+.qpcHeroTag {
+  font-style: normal;        /* remove italics */
+  font-weight: 500;
+  letter-spacing: 0.0rem;
+  text-transform: none;
+
+  font-size: 1.15rem;        /* slightly larger */
+  color: var(--ifm-color-primary);
+
+  margin-bottom: 18px;
+  opacity: 1;
+}
+
+.qpcHeroBlurb {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  color: var(--ifm-font-color-base);
+}
+
+
+.qpcHeroLogo {
+  width: 170px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+/* Mobile: stack */
+@media (max-width: 768px) {
+  .qpcHero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 18px;
+    gap: 16px;
+  }
+
+  .qpcHeroLogo {
+    width: 140px;
+  }
+
+  .qpcHeroTag {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode: use a separate background asset + add a dark base */
+html[data-theme="dark"] .qpcHero {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 22, 26, 0.92) 0%,
+    rgba(20, 22, 26, 0.78) 55%,
+    rgba(20, 22, 26, 0.65) 100%
+  );
+}
+
+html[data-theme="dark"] .qpcHero::before {
+  background-image: url("/img/hero-texture-dark.png");
+  opacity: 0.75;                 /* dark texture can be stronger */
+  background-position: left 23%; /* adjust if needed */
+  filter: none;
+}
+
+html[data-theme="dark"] .qpcHero::after {
+  /* Instead of darkening, we “clean” the logo area with subtle vignette */
+  background: radial-gradient(
+      1200px 400px at 85% 50%,
+      rgba(20, 22, 26, 0.15) 0%,
+      rgba(20, 22, 26, 0.65) 60%,
+      rgba(20, 22, 26, 0.9) 100%
+    );
+}
+
+/* Typography tweaks for dark */
+html[data-theme="dark"] .qpcHeroTag {
+  color: #7bb6ff;   /* a lighter, calmer blue than primary */
+}
+
+html[data-theme="dark"] .qpcHeroBlurb {
+  opacity: 0.92;
+}
+
+html[data-theme="dark"] .qpcHeroLogo {
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.55));
 }
