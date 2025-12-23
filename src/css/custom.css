@@ -287,7 +287,7 @@
 
 
 .qpcHeroLogo {
-  width: 170px;
+  width: 160px;
   height: auto;
   flex: 0 0 auto;
 }
@@ -358,4 +358,47 @@ html[data-theme="dark"] .qpcHeroLogo {
   .qpcHeroLogo {
     display: none;
   }
+}
+
+/* =========================
+   Expandable sections (details/summary)
+   Used in Expertise + FAQs
+   ========================= */
+
+details {
+  background: #ffffff;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+details[open] {
+  background: #ffffff;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none; /* remove default marker */
+}
+
+details summary::-webkit-details-marker {
+  display: none; /* Chrome/Safari */
+}
+
+/* Optional: subtle hover affordance */
+details summary:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Space content nicely when opened */
+details > *:not(summary) {
+  margin-top: 0.75rem;
+}
+
+/* Dark mode */
+html[data-theme="dark"] details {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-toc-border-color);
 }
