@@ -5,7 +5,7 @@ title: Our Approach
 # Our Approach to Proteomics Collaboration
 <br />
 
-We believe robust proteomics studies are best achieved through careful experimental thinking and close collaboration throughout a project. Our role is to work alongside researchers to design, execute, and interpret studies in a way that supports meaningful and defensible biological conclusions.
+Robust proteomics studies are best achieved through careful experimental thinking and close collaboration. We work alongside researchers to design, execute, and interpret studies that support meaningful and defensible biological conclusions.
 
 ---
 

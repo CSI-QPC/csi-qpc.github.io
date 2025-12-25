@@ -5,9 +5,7 @@ title: Data Analysis
 # How We Approach Proteomics Data Analysis
 <br />
 
-Data analysis is treated as an extension of experimental design rather than a downstream step. Our approach focuses on understanding what a dataset can reliably support, how confidently results can be interpreted, and where analytical limits lie.
-
-Analysis strategies are adapted to the biological question, study design, and data quality, with emphasis on minimising bias and avoiding over-interpretation.
+Data analysis is treated as an extension of experimental design rather than a downstream step. Our approach focuses on what a dataset can reliably support, how results should be interpreted, and where analytical limits lie.
 
 ---
 
