@@ -168,6 +168,23 @@
 }
 
 /* =================================================
+   Expandable content helpers (Expertise, FAQs)
+   ================================================= */
+
+.markdown .qpc-details-intro {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: 2.2rem;
+}
+
+.markdown .qpc-details-image {
+  display: flex;
+  justify-content: center;
+  margin: -1.6rem 0 0.6rem;
+}
+
+/* =================================================
    Footer
    ================================================= */
 
@@ -253,8 +270,6 @@
 .qpcHeroLogo {
   width: 160px;
   flex: 0 0 auto;
-
-  /* Brand glow (light + dark) */
   filter: drop-shadow(0 0 28px rgba(123,182,255,0.35));
 }
 
@@ -274,7 +289,7 @@
   .qpcHeroTag {
     font-size: 1rem;
   }
-  
+
   .qpcHero::after {
     background: none;
   }
@@ -315,7 +330,6 @@ html[data-theme="dark"] .qpcHeroBlurb {
   opacity: 0.92;
 }
 
-/* Dark mode: merge glow + grounding shadow */
 html[data-theme="dark"] .qpcHeroLogo {
   filter:
     drop-shadow(0 0 30px rgba(123,182,255,0.4))
@@ -323,15 +337,34 @@ html[data-theme="dark"] .qpcHeroLogo {
 }
 
 /* =================================================
-   Expandable sections (Expertise + FAQs)
+   Expandable sections — soft cards
    ================================================= */
 
 details {
-  background: #fff;
-  border: 1px solid var(--ifm-toc-border-color);
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+
+  padding: 0.85rem 1.05rem;
+  margin-bottom: 1.1rem;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.03),
+    0 6px 16px rgba(0, 0, 0, 0.04);
+
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Lift slightly on hover (desktop only) */
+@media (hover: hover) {
+  details:hover {
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.04),
+      0 10px 24px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+  }
 }
 
 details summary {
@@ -339,25 +372,82 @@ details summary {
   font-size: 0.95rem;
   font-weight: 600;
   list-style: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
+/* Remove default marker */
 details summary::-webkit-details-marker {
   display: none;
 }
 
-details summary:hover {
-  color: var(--ifm-color-primary);
+/* Custom indicator */
+details summary::after {
+  content: "▾";
+  font-size: 0.8rem;
+  opacity: 0.5;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
+/* Rotate indicator when open */
+details[open] summary::after {
+  transform: rotate(180deg);
+  opacity: 0.7;
+}
+
+/* Content spacing */
 details > *:not(summary) {
-  margin-top: 0.75rem;
+  margin-top: 0.85rem;
+
+    /* NEW */
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
-/* Dark mode */
+/* Slightly more breathing room on desktop */
+@media (min-width: 996px) {
+  details > *:not(summary) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Subtle fade-in when opened */
+details[open] > *:not(summary) {
+  animation: detailsFadeIn 0.25s ease-out;
+}
+
+@keyframes detailsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   Dark mode
+   ========================= */
+
 html[data-theme="dark"] details {
   background: var(--ifm-background-surface-color);
-  border-color: var(--ifm-toc-border-color);
+  border-color: rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 8px 20px rgba(0, 0, 0, 0.35);
 }
+
+html[data-theme="dark"] details summary::after {
+  opacity: 0.6;
+}
+
 
 /* =================================================
    Dark-mode image glow (Expertise illustrations)
@@ -367,4 +457,11 @@ html[data-theme="dark"] img.qpc-illustration {
   filter: 
     drop-shadow(0 0 14px rgba(180, 210, 255, 0.35))
     drop-shadow(0 0 28px rgba(120, 170, 255, 0.15));
+}
+
+/* Workflow section styling */
+.qpc-workflow-step {
+  padding-left: 1rem;
+  border-left: 3px solid var(--ifm-color-primary-lightest);
+  margin-bottom: 1.5rem;
 }
