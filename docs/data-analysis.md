@@ -2,47 +2,78 @@
 title: Data Analysis
 ---
 
+import { Database, Layers, Sliders, BarChart3, Compass, AlertTriangle } from 'lucide-react';
+
 # How We Approach Proteomics Data Analysis
 <br />
 
-Data analysis is treated as an extension of experimental design rather than a downstream step. Our approach focuses on what a dataset can reliably support, how results should be interpreted, and where analytical limits lie.
+Proteomics data analysis is treated as a continuation of experimental design rather than a downstream step.  
+Our approach focuses on dataset behaviour, inferential limits, and what conclusions can be supported with confidence.
 
 ---
 
-## Understanding the dataset before interpretation
+## Our approach to data analysis
 
-Before examining biological differences, we assess whether the dataset behaves as expected from an experimental and technical perspective. This includes reviewing experimental setup and controls, replicate structure, and descriptive statistics such as proteome depth, data completeness, and missing value patterns.
+<div className="qpc-approach-grid">
 
-Known controls or expected targets, where available, are used as internal benchmarks to confirm that the experimental design is reflected in the data.
+  <div className="qpc-approach-card">
+    <div className="qpc-stepTitle">
+      <span className="qpc-stepIcon"><Database size={18} strokeWidth={1.75} /></span>
+      <span>Dataset behaviour before interpretation</span>
+    </div>
+    <div className="qpc-stepBody">
+      We first assess whether the dataset behaves as expected based on experimental design, including sample composition, replicate structure, proteome depth, and data completeness.
+    </div>
+  </div>
 
----
+  <div className="qpc-approach-card">
+    <div className="qpc-stepTitle">
+      <span className="qpc-stepIcon"><Layers size={18} strokeWidth={1.75} /></span>
+      <span>Replicate coherence and global structure</span>
+    </div>
+    <div className="qpc-stepBody">
+      Replicate consistency and global data structure are examined early to determine how reliably quantitative differences can be interpreted.
+    </div>
+  </div>
 
-## Quantitative reasoning and statistical context
+  <div className="qpc-approach-card">
+    <div className="qpc-stepTitle">
+      <span className="qpc-stepIcon"><Sliders size={18} strokeWidth={1.75} /></span>
+      <span>Explicit filtering and threshold decisions</span>
+    </div>
+    <div className="qpc-stepBody">
+      Filtering criteria, completeness thresholds, and imputation parameters are defined explicitly and treated as analytical decisions that shape biological conclusions.
+    </div>
+  </div>
 
-Quantitative analysis is guided by both statistical considerations and biological context. We examine data distributions, effect sizes, consistency across replicates, and depth of coverage, rather than prioritising significance alone.
+  <div className="qpc-approach-card">
+    <div className="qpc-stepTitle">
+      <span className="qpc-stepIcon"><BarChart3 size={18} strokeWidth={1.75} /></span>
+      <span>Quantitative differences in context</span>
+    </div>
+    <div className="qpc-stepBody">
+      Statistical results are interpreted alongside effect sizes, replicate consistency, and coverage depth, rather than prioritising significance alone.
+    </div>
+  </div>
 
-Statistical results are interpreted in relation to the experimental question. In some cases, statistically significant changes may be biologically weak, while consistent trends may warrant discussion despite limited statistical power. These distinctions are discussed explicitly with collaborators.
+  <div className="qpc-approach-card">
+    <div className="qpc-stepTitle">
+      <span className="qpc-stepIcon"><Compass size={18} strokeWidth={1.75} /></span>
+      <span>Conditional downstream analysis</span>
+    </div>
+    <div className="qpc-stepBody">
+      Functional and enrichment analyses are applied selectively, guided by whether the quantitative structure supports meaningful biological interpretation.
+    </div>
+  </div>
 
----
+  <div className="qpc-approach-card">
+    <div className="qpc-stepTitle">
+      <span className="qpc-stepIcon"><AlertTriangle size={18} strokeWidth={1.75} /></span>
+      <span>Explicit communication of limits</span>
+    </div>
+    <div className="qpc-stepBody">
+      Analytical red flags and limitations are highlighted, and conclusions are constrained when data quality or structure does not support stronger claims.
+    </div>
+  </div>
 
-## Quality control across the workflow
-
-Quality control is considered throughout the workflow, from experimental design and sample preparation to data processing and analysis. This includes evaluating control adequacy, replicate concordance, and the appropriateness of applied thresholds and filtering steps.
-
-Unexpected global changes or excessive variability are treated as analytical red flags rather than positive findings. In such cases, we discuss whether conclusions should be limited, whether redesign or additional replication is required, or whether results should be interpreted conservatively.
-
----
-
-## Interpretation through collaboration
-
-Data interpretation is conducted as a dialogue rather than one-way delivery. We work with collaborators to explain what the data show, how much confidence can be placed in specific observations, and what the data cannot support.
-
-Where appropriate, downstream analyses such as functional enrichment are used to contextualise findings, provided they align with the biological question and dataset structure.
-
----
-
-## Data delivery and reproducibility
-
-Processed datasets, quality metrics, and analysis outputs are delivered in a clear and traceable manner. Key analysis decisions and parameters are documented to support reproducibility, follow-up analyses, and manuscript preparation.
-
-Our aim is to provide results that are technically sound, interpretable, and defensible for downstream biological reasoning.
+</div>
