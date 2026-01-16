@@ -16,7 +16,7 @@ const config = {
   // Hosting config (safe defaults for local dev)
   // We'll adjust later for GitHub Pages / custom domain.
   // =========================
-  url: 'https://csi-qpc.github.io/qpc-site/',
+  url: 'https://csi-qpc.github.io',
   baseUrl: '/qpc-site/',
   organizationName: 'csi-qpc',
   projectName: 'qpc-site',
