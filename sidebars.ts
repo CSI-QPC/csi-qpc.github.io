@@ -19,6 +19,7 @@ const sidebars: SidebarsConfig = {
         'expertise',
         'instrumentation',
         'data-analysis',
+        'get-started',
       ],
     },
 
